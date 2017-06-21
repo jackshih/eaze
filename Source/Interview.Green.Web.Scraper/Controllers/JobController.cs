@@ -1,11 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Web.Http;
+using Interview.Green.Web.Scraper.Interfaces;
 
 namespace Interview.Green.Web.Scraper.Controllers
 {
     public class JobController : ApiController
     {
+        private IWebScrapService _webScrapService;
+        private IDataRepo _repoService;
+
+        public JobController(IWebScrapService webScrapService, IDataRepo dataRepo)
+        {
+            _webScrapService = webScrapService;
+            _repoService = dataRepo;
+        }
         // GET: api/job
         public IEnumerable<string> Get()
         {
@@ -19,21 +29,21 @@ namespace Interview.Green.Web.Scraper.Controllers
         }
 
         // POST: api/job
-        public void Post([FromBody] string value)
+        public async Task<IHttpActionResult> Post([FromBody] string url)
         {
-            throw new NotImplementedException();
-        }
+            try
+            {
+                var scraped = _webScrapService.Scrape(url);
 
-        // PUT: api/job/5
-        public void Put(int id, [FromBody] string value)
-        {
-            throw new NotImplementedException();
-        }
+                var id = _repoService.Save(scraped);
 
-        // DELETE: api/job/5
-        public void Delete(int id)
-        {
-            throw new NotImplementedException();
+                return Ok(id);
+            }
+            catch (Exception)
+            {
+                return InternalServerError();
+            }
+         
         }
     }
 }

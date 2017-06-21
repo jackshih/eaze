@@ -145,6 +145,19 @@
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Interview.Green.Web.Scraper.Service\Interview.Green.Web.Scraper.Service.csproj">
+      <Project>{40AA01C3-E153-4EFE-9A51-B52091703298}</Project>
+      <Name>Interview.Green.Web.Scraper.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interview.Green.Web.Scraper.Interfaces\Interview.Green.Web.Scraper.Interfaces.csproj">
+      <Project>{C37020FA-1901-499B-B4CE-5CF8CE665476}</Project>
+      <Name>Interview.Green.Web.Scraper.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -172,6 +185,11 @@
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>
+    <MonoDevelop>
+      <Properties>
+        <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
+      </Properties>
+    </MonoDevelop>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

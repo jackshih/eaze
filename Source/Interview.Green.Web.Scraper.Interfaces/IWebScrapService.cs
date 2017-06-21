@@ -3,5 +3,6 @@
     public interface IWebScrapService
     {
         // TODO: IMP INTERFACE NEEDED FOR SERVICE.
+        string Scrape(string url);
     }
 }

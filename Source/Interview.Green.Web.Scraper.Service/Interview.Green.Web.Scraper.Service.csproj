@@ -50,11 +50,15 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9.5\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="JobSchedulerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebScrapService.cs" />
+    <Compile Include="DataRepoService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -63,6 +67,10 @@
     <ProjectReference Include="..\Interview.Green.Web.Scraper.Interfaces\Interview.Green.Web.Scraper.Interfaces.csproj">
       <Project>{C37020FA-1901-499B-B4CE-5CF8CE665476}</Project>
       <Name>Interview.Green.Web.Scraper.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interview.Green.Web.Scraper.Models\Interview.Green.Web.Scraper.Models.csproj">
+      <Project>{B62950EB-FD92-4D2C-BA72-CA9015C27DFB}</Project>
+      <Name>Interview.Green.Web.Scraper.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
