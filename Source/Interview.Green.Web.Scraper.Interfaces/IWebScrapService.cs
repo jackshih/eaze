@@ -1,8 +1,10 @@
-﻿namespace Interview.Green.Web.Scraper.Interfaces
+﻿using System.Threading.Tasks;
+
+namespace Interview.Green.Web.Scrapper.Interfaces
 {
     public interface IWebScrapService
     {
         // TODO: IMP INTERFACE NEEDED FOR SERVICE.
-        string Scrape(string url);
+        Task<string> Scrape(string url);
     }
 }

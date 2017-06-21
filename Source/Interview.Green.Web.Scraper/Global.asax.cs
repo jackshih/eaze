@@ -2,7 +2,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace Interview.Green.Web.Scraper
+namespace Interview.Green.Web.Scrapper
 {
     public class WebApiApplication : HttpApplication
     {

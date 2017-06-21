@@ -1,21 +1,20 @@
-﻿using HtmlAgilityPack;
-using System;
+﻿using System;
 using System.Net.Http;
-using Interview.Green.Web.Scraper.Interfaces;
-using System.Net.Http.Headers;
+using System.Threading.Tasks;
+using Interview.Green.Web.Scrapper.Interfaces;
 
-namespace Interview.Green.Web.Scraper.Service
+namespace Interview.Green.Web.Scrapper.Service
 {
     public class WebScrapService : IWebScrapService
     {
-		static HttpClient client = new HttpClient();
+		static readonly HttpClient Client = new HttpClient();
 
 		// TODO: IMP. WEBSITE Scraper HERE.
-		public string Scrape(string url)
+		public async Task<string> Scrape(string url)
         {
 			var uri = new Uri(url);
 
-			var response = client.GetStringAsync(uri).Result;
+			var response = await Client.GetStringAsync(uri);
 
 			return response;
         }

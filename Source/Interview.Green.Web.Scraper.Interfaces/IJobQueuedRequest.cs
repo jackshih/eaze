@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Interview.Green.Web.Scraper.Interfaces
+namespace Interview.Green.Web.Scrapper.Interfaces
 {
     /// <summary>
     ///     Used for Queued Jobs.
@@ -8,5 +8,7 @@ namespace Interview.Green.Web.Scraper.Interfaces
     public interface IJobQueuedRequest : IBasic
     {
         Guid RequestId { get; set; }
+        JobType JobType { get; set; }
+        string RequestValue { get; set; }
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-namespace Interview.Green.Web.Scraper.Models
+﻿namespace Interview.Green.Web.Scrapper.Models
 {
     public class ScrapeDataModel
     {

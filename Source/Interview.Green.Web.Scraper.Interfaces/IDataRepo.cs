@@ -1,9 +1,11 @@
 ﻿using System;
-namespace Interview.Green.Web.Scraper.Interfaces
+using System.Threading.Tasks;
+
+namespace Interview.Green.Web.Scrapper.Interfaces
 {
     public interface IDataRepo
     {
-        Guid Save(string content);
-        string GetContent(Guid id);
+        Task<Guid> Save(string content);
+        Task<string> GetContent(Guid requestId);
     }
 }

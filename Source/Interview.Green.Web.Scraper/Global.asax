@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Interview.Green.Web.Scraper.WebApiApplication" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Interview.Green.Web.Scrapper.WebApiApplication" Language="C#" %>
