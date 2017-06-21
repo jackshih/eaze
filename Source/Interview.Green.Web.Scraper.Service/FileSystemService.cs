@@ -31,10 +31,10 @@ namespace Interview.Green.Web.Scrapper.Service
         /// <param name="content"></param>
         /// <returns></returns>
         public async Task<bool> WriteLineAsync(string path, string content)
-        {            
-            using (var fs = File.CreateText(path))
+        {
+            using (var fs = File.Exists(path) ? File.AppendText(path) : File.CreateText(path))
             {
-                await fs.WriteAsync(content);                
+                await fs.WriteLineAsync(content);
             }
             return true;
         }
