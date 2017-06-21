@@ -27,6 +27,13 @@ namespace Interview.Green.Web.Scrapper.Service
             _dataPath = AppDomain.CurrentDomain.GetData("DataDirectory").ToString();
             _logPath = $"{_dataPath}\\Log.txt";
         }
+
+        /// <summary>
+        /// Save content to a data repo.
+        /// All new requests are logged and an ID is given back as a response.
+        /// </summary>
+        /// <param name="content"></param>
+        /// <returns></returns>
         public async Task<Guid> Save(string content)
         {
             var id = Guid.NewGuid();
@@ -43,6 +50,11 @@ namespace Interview.Green.Web.Scrapper.Service
             return id;
         }
 
+        /// <summary>
+        /// Get content based on request Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<string> GetContent(Guid id)
         {
             var path = $"{_dataPath}/{id}.txt";

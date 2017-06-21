@@ -24,6 +24,12 @@ namespace Interview.Green.Web.Scrapper.Controllers
             _repoService = dataRepo;
         }   
         
+        /// <summary>
+        /// Get the content from requestId, if requestId not found, return notfound status code
+        /// otherwise, return content
+        /// </summary>
+        /// <param name="requestId"></param>
+        /// <returns></returns>
         public async Task<IHttpActionResult> Get(Guid requestId)
         {
             try
@@ -51,8 +57,15 @@ namespace Interview.Green.Web.Scrapper.Controllers
             
         }
 
-        // POST: api/job
-        // We need an API endpoint that has the ability to post a new Web site job.
+        /// <summary>
+        /// We need an API endpoint that has the ability to post a new Web site job.
+        /// JobRequest will check jobtype and process accordingly.
+        /// Currently the only job type needed is the web site scraping job.
+        /// The Api will process this job and return a id for lookup and status purpose
+        /// </summary>
+        /// <param name="jobRequest"></param>
+        /// <returns></returns>
+        // POST: api/job        
         public async Task<IHttpActionResult> Post(JobRequest jobRequest)
         {
             try
@@ -74,7 +87,7 @@ namespace Interview.Green.Web.Scrapper.Controllers
                                 RequestedAt = DateTime.Now,
                                 Content = scraped
                             };
-
+                            
                             return Ok(jobResult);                            
                     default:
                         return Ok("Missing Job Type");

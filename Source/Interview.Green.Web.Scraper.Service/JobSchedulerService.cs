@@ -16,7 +16,9 @@ namespace Interview.Green.Web.Scrapper.Service
             var scraped = await webScraperService.Scrape(url);
 
             // If items to scrape were requested the next step should be to process the response and find the items.
-
+            // Not sure what needs to be scraped. maybe a table?
+            // Can use System.Windows.Forms.HtmlDocument class to parse the scrapped page
+            
             // Store the result of the job so it can be retrieved later by ID.
             var dataRepoService = new DataRepoService();
             await dataRepoService.Save(scraped);

@@ -7,6 +7,11 @@ namespace Interview.Green.Web.Scrapper.Service
 {
     public class FileSystemService : IFileSystem
     {       
+        /// <summary>
+        /// File system that will read input path and return content
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
         public async Task<string> ReadToEndAsync(string path)
         {
             if (!File.Exists(path))
@@ -19,11 +24,14 @@ namespace Interview.Green.Web.Scrapper.Service
             }
         }
        
+        /// <summary>
+        /// File system that will write content to path specified in parameter
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="content"></param>
+        /// <returns></returns>
         public async Task<bool> WriteLineAsync(string path, string content)
-        {
-            if (!File.Exists(path))
-                return false;
-
+        {            
             using (var fs = File.CreateText(path))
             {
                 await fs.WriteAsync(content);                

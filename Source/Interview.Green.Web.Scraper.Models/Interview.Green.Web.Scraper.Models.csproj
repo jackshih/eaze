@@ -43,7 +43,6 @@
     <Compile Include="JobRequest.cs" />
     <Compile Include="JobResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScrapeDataModel.cs" />
     <Compile Include="IdNotFoundException.cs" />
   </ItemGroup>
   <ItemGroup>

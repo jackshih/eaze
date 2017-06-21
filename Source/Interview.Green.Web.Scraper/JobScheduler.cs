@@ -8,12 +8,12 @@ namespace Interview.Green.Web.Scrapper
     {
         public static void Start()
         {
-            IScheduler scheduler = StdSchedulerFactory.GetDefaultScheduler();
+            var scheduler = StdSchedulerFactory.GetDefaultScheduler();
             scheduler.Start();
 
-            IJobDetail job = JobBuilder.Create<JobSchedulerService>().Build();
+            var job = JobBuilder.Create<JobSchedulerService>().Build();
             job.JobDataMap["url"] = "https://www.eaze.com/";
-            ITrigger trigger = TriggerBuilder.Create()
+            var trigger = TriggerBuilder.Create()
                 .WithDailyTimeIntervalSchedule
                   (s =>
                      s.WithIntervalInMinutes(1)
